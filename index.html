@@ -1,1 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spice Dynasty | Authentic Asian Cuisine</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Spice Dynasty</h1>
+                <p>Authentic Asian Cuisine</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#menu" class="active">Menu</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
 
+    <section id="menu-hero" class="menu-hero">
+        <div class="container">
+            <h2>Our Menu</h2>
+            <p>Experience authentic flavors from across Asia</p>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+        <div class="container">
+            <div class="menu-navigation">
+                <button class="menu-nav-item active" data-category="starters">Starters</button>
+                <button class="menu-nav-item" data-category="soups">Soups</button>
+                <button class="menu-nav-item" data-category="momos">Momos</button>
+                <button class="menu-nav-item" data-category="wok-box">Wok Box</button>
+                <button class="menu-nav-item" data-category="noodles-rice">Noodles & Rice</button>
+                <button class="menu-nav-item" data-category="main-course">Main Course</button>
+            </div>
+
+            <div class="menu-content">
+                <!-- Starters Section -->
+                <div class="menu-category active" id="starters">
+                    <h3 class="category-title">Starters</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Crispy Chilli Potato</h4>
+                                <p class="item-desc">Crispy fried potato strips tossed in spicy chilli sauce</p>
+                            </div>
+                            <div class="item-price">₹230.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Honey Chilli Potato</h4>
+                                <p class="item-desc">Crispy potatoes tossed in a sweet and spicy honey chilli sauce</p>
+                            </div>
+                            <div class="item-price">₹230.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Salt & Pepper Potato</h4>
+                                <p class="item-desc">Crispy potatoes seasoned with aromatic salt and pepper spice</p>
+                            </div>
+                            <div class="item-price">₹230.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Veg Spring Rolls</h4>
+                                <p class="item-desc">Crispy fried rolls stuffed with mixed vegetables and spices</p>
+                            </div>
+                            <div class="item-price">₹250.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Chilli Mushroom Dry</h4>
+                                <p class="item-desc">Crispy mushrooms tossed in spicy chilli sauce with bell peppers and onions</p>
+                            </div>
+                            <div class="item-price">₹300.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Veg Manchurian Dry</h4>
+                                <p class="item-desc">Crispy vegetable balls tossed in classic manchurian sauce</p>
+                            </div>
+                            <div class="item-price">₹300.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Chilli Paneer</h4>
+                                <p class="item-desc">Cottage cheese cubes tossed in spicy chilli sauce with bell peppers</p>
+                            </div>
+                            <div class="item-price">₹300.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Crispy Chilli Corn</h4>
+                                <p class="item-desc">Crispy fried corn kernels tossed in spicy chilli sauce</p>
+                            </div>
+                            <div class="item-price">₹300.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Crispy Corn Salt & Pepper</h4>
+                                <p class="item-desc">Crispy corn kernels seasoned with aromatic salt and pepper spice</p>
+                            </div>
+                            <div class="item-price">₹300.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Vegetable Salt & Pepper</h4>
+                                <p class="item-desc">Mixed vegetables seasoned with aromatic salt and pepper spice</p>
+                            </div>
+                            <div class="item-price">₹300.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soups Section -->
+                <div class="menu-category" id="soups">
+                    <h3 class="category-title">Soups</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Clear Soup</h4>
+                                <p class="item-desc">Light and refreshing vegetable broth with fresh herbs</p>
+                            </div>
+                            <div class="item-price">₹170.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Hot & Sour Soup</h4>
+                                <p class="item-desc">Tangy and spicy soup with mushrooms, bamboo shoots, and tofu</p>
+                            </div>
+                            <div class="item-price">₹170.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Sweet Corn Soup</h4>
+                                <p class="item-desc">Creamy soup with sweet corn kernels and vegetables</p>
+                            </div>
+                            <div class="item-price">₹170.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Manchow Soup</h4>
+                                <p class="item-desc">Spicy and tangy soup with vegetables and crispy noodles</p>
+                            </div>
+                            <div class="item-price">₹170.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Tom Yum Soup</h4>
+                                <p class="item-desc">Thai style hot and sour soup with lemongrass, galangal, and lime</p>
+                            </div>
+                            <div class="item-price">₹170.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Thukpa Momo Soup</h4>
+                                <p class="item-desc">Tibetan noodle soup served with momos</p>
+                            </div>
+                            <div class="item-price">₹230.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Momos Section -->
+                <div class="menu-category" id="momos">
+                    <h3 class="category-title">Momos</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Cheese & Corn Momos</h4>
+                                <p class="item-desc">Steamed dumplings stuffed with cheese and sweet corn</p>
+                            </div>
+                            <div class="item-price">₹220.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Steamed Paneer Momos</h4>
+                                <p class="item-desc">Steamed dumplings filled with spiced cottage cheese</p>
+                            </div>
+                            <div class="item-price">₹220.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Paneer Schezwan Momos</h4>
+                                <p class="item-desc">Paneer momos tossed in spicy schezwan sauce</p>
+                            </div>
+                            <div class="item-price">₹220.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Fried Paneer Momos</h4>
+                                <p class="item-desc">Deep-fried dumplings filled with spiced cottage cheese</p>
+                            </div>
+                            <div class="item-price">₹230.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Wheat Momos</h4>
+                                <p class="item-desc">Healthy whole wheat dumplings with vegetable filling</p>
+                            </div>
+                            <div class="item-price">₹220.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Steamed Momos</h4>
+                                <p class="item-desc">Classic steamed dumplings with mixed vegetable filling</p>
+                            </div>
+                            <div class="item-price">₹200.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Schezwan Momos</h4>
+                                <p class="item-desc">Steamed momos tossed in spicy schezwan sauce</p>
+                            </div>
+                            <div class="item-price">₹200.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Fried Momos</h4>
+                                <p class="item-desc">Deep-fried dumplings with mixed vegetable filling</p>
+                            </div>
+                            <div class="item-price">₹220.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Pan Fried Momos</h4>
+                                <p class="item-desc">Momos pan-fried to perfection with crispy bottom</p>
+                            </div>
+                            <div class="item-price">₹220.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Momos In Hot Garlic Sauce</h4>
+                                <p class="item-desc">Steamed momos tossed in spicy garlic sauce</p>
+                            </div>
+                            <div class="item-price">₹230.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Spicy Cottage Cheese Momos</h4>
+                                <p class="item-desc">Dumplings filled with spicy cottage cheese mix</p>
+                            </div>
+                            <div class="item-price">₹257.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wok Box Section -->
+                <div class="menu-category" id="wok-box">
+                    <h3 class="category-title">All Time Favourite Wok Box</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Chilli Paneer With Noodles/Rice</h4>
+                                <p class="item-desc">Spicy paneer served with your choice of noodles or rice</p>
+                            </div>
+                            <div class="item-price">₹300.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Vegetable In Hot Garlic Sauce With Noodles/Rice</h4>
+                                <p class="item-desc">Mixed vegetables in spicy garlic sauce with choice of noodles or rice</p>
+                            </div>
+                            <div class="item-price">₹300.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Vegetable Manchurian With Noodles/Rice</h4>
+                                <p class="item-desc">Vegetable manchurian served with your choice of noodles or rice</p>
+                            </div>
+                            <div class="item-price">₹300.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Vegetable In Kung Pao Sauce With Noodles/Rice</h4>
+                                <p class="item-desc">Vegetables in kung pao sauce with choice of noodles or rice</p>
+                            </div>
+                            <div class="item-price">₹300.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Chilli Chicken With Noodles/Rice</h4>
+                                <p class="item-desc">Spicy chicken tossed with bell peppers served with noodles or rice</p>
+                            </div>
+                            <div class="item-price">₹340.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Chicken Manchurian With Noodles/Rice</h4>
+                                <p class="item-desc">Chicken manchurian served with your choice of noodles or rice</p>
+                            </div>
+                            <div class="item-price">₹340.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Chicken In Hot Garlic Sauce With Noodles/Rice</h4>
+                                <p class="item-desc">Chicken in spicy garlic sauce with choice of noodles or rice</p>
+                            </div>
+                            <div class="item-price">₹340.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Chicken In Kung Pao Sauce With Noodles/Rice</h4>
+                                <p class="item-desc">Chicken in kung pao sauce with choice of noodles or rice</p>
+                            </div>
+                            <div class="item-price">₹340.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Noodles & Rice Section -->
+                <div class="menu-category" id="noodles-rice">
+                    <h3 class="category-title">Noodles & Rice</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Hakka Noodles</h4>
+                                <p class="item-desc">Stir-fried noodles with vegetables in classic hakka style</p>
+                            </div>
+                            <div class="item-price">₹240.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Chilli Garlic Noodles</h4>
+                                <p class="item-desc">Noodles tossed with spicy chilli garlic sauce</p>
+                            </div>
+                            <div class="item-price">₹240.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Butter Garlic Noodles</h4>
+                                <p class="item-desc">Noodles tossed with butter and garlic for a rich flavor</p>
+                            </div>
+                            <div class="item-price">₹240.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Hawker Style Chowmein</h4>
+                                <p class="item-desc">Street-style stir-fried noodles with vegetables and spices</p>
+                            </div>
+                            <div class="item-price">₹240.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Butter Pepper Garlic Noodles</h4>
+                                <p class="item-desc">Noodles tossed in butter, black pepper, and garlic</p>
+                            </div>
+                            <div class="item-price">₹240.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Pan Fried Noodles</h4>
+                                <p class="item-desc">Crispy fried noodles topped with vegetables in sauce</p>
+                            </div>
+                            <div class="item-price">₹300.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>American Chop Suey</h4>
+                                <p class="item-desc">Crispy fried noodles with sweet and sour vegetables and sauce</p>
+                            </div>
+                            <div class="item-price">₹350.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Steamed Rice</h4>
+                                <p class="item-desc">Plain steamed rice</p>
+                            </div>
+                            <div class="item-price">₹220.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Fried Rice</h4>
+                                <p class="item-desc">Rice stir-fried with mixed vegetables and soy sauce</p>
+                            </div>
+                            <div class="item-price">₹240.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Butter Garlic Fried Rice</h4>
+                                <p class="item-desc">Fried rice tossed with butter and garlic</p>
+                            </div>
+                            <div class="item-price">₹240.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Course Section -->
+                <div class="menu-category" id="main-course">
+                    <h3 class="category-title">Main Course</h3>
+                    <div class="menu-items">
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Vegetable Hot Garlic Sauce</h4>
+                                <p class="item-desc">Mixed vegetables cooked in spicy garlic sauce</p>
+                            </div>
+                            <div class="item-price">₹340.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Vegetable Manchurian Gravy</h4>
+                                <p class="item-desc">Vegetable balls served in manchurian gravy</p>
+                            </div>
+                            <div class="item-price">₹340.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Chilli Paneer Gravy</h4>
+                                <p class="item-desc">Cottage cheese cubes in spicy chilli sauce gravy</p>
+                            </div>
+                            <div class="item-price">₹340.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Kung Pao Vegetable Gravy</h4>
+                                <p class="item-desc">Mixed vegetables in spicy kung pao sauce</p>
+                            </div>
+                            <div class="item-price">₹340.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Schezwan Vegetable Gravy</h4>
+                                <p class="item-desc">Mixed vegetables cooked in spicy schezwan sauce</p>
+                            </div>
+                            <div class="item-price">₹340.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Stir Fried Asian Greens</h4>
+                                <p class="item-desc">Assorted Asian vegetables stir-fried with garlic and soy</p>
+                            </div>
+                            <div class="item-price">₹340.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Chicken Manchurian Gravy</h4>
+                                <p class="item-desc">Chicken balls served in a flavorful manchurian gravy</p>
+                            </div>
+                            <div class="item-price">₹390.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Chilli Chicken Gravy</h4>
+                                <p class="item-desc">Tender chicken pieces in spicy chilli sauce gravy</p>
+                            </div>
+                            <div class="item-price">₹390.00</div>
+                        </div>
+
+                        <div class="menu-item">
+                            <div class="item-details">
+                                <h4>Chicken In Black Pepper Sauce</h4>
+                                <p class="item-desc">Chicken cooked in aromatic black pepper sauce</p>
+                            </div>
+                            <div class="item-price">₹390.00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3> Dragon wok
+                  
+            </h3>
+                    <p>Shop No: Shop No. 9, Floor: ground, Pocket-B, Lsc,</p>
+                    <p>Phone: +91 09555132019</p>
+                    
+                </div>
+                <div class="footer-hours">
+                    <h3>Opening Hours</h3>
+                    <p>Monday to Friday: 15:00 AM - 11:00 PM</p>
+                    <p>Saturday & Sunday: 13:00 PM - 12:00 AM</p>
+                </div>
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                  
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Dragon wok. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
