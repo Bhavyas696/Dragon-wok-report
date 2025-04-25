@@ -1,0 +1,310 @@
+// Mobile Menu Toggle
+const mobileMenu = document.querySelector('.mobile-menu');
+const nav = document.querySelector('nav');
+
+mobileMenu.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    nav.classList.toggle('active');
+    
+    // Toggle menu icon
+    const spans = mobileMenu.querySelectorAll('span');
+    if (mobileMenu.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+    } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+    }
+});
+
+// Close mobile menu when clicking a nav link
+const navLinks = document.querySelectorAll('nav ul li a');
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        nav.classList.remove('active');
+        
+        // Reset menu icon
+        const spans = mobileMenu.querySelectorAll('span');
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+    });
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            // Get header height for offset
+            const headerHeight = document.querySelector('header').offsetHeight;
+            
+            window.scrollTo({
+                top: targetElement.offsetTop - headerHeight,
+                behavior: 'smooth'
+            });
+            
+            // Update active nav link
+            document.querySelectorAll('nav ul li a').forEach(link => {
+                link.classList.remove('active');
+            });
+            this.classList.add('active');
+        }
+    });
+});
+
+// Update active nav link on scroll
+window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+    const headerHeight = document.querySelector('header').offsetHeight;
+    
+    document.querySelectorAll('section').forEach(section => {
+        const sectionTop = section.offsetTop - headerHeight - 20;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            document.querySelectorAll('nav ul li a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+});
+
+// Product Filter
+const categories = document.querySelectorAll('.category');
+const productCards = document.querySelectorAll('.product-card');
+
+categories.forEach(category => {
+    category.addEventListener('click', () => {
+        // Update active category
+        categories.forEach(c => c.classList.remove('active'));
+        category.classList.add('active');
+        
+        const filter = category.dataset.category;
+        
+        // Filter products
+        productCards.forEach(card => {
+            if (filter === 'all' || card.dataset.type === filter) {
+                card.style.display = 'block';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 10);
+            } else {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 300);
+            }
+        });
+    });
+});
+
+// Contact Form Validation and Submission
+const contactForm = document.getElementById('contact-form');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        
+        // Simple validation
+        if (name === '' || email === '' || message === '') {
+            showFormAlert('Please fill in all fields', 'error');
+            return;
+        }
+        
+        if (!isValidEmail(email)) {
+            showFormAlert('Please enter a valid email address', 'error');
+            return;
+        }
+        
+        // If validation passes, simulate form submission
+        // In a real scenario, you would send this data to a server
+        const formData = {
+            name,
+            email,
+            message
+        };
+        
+        console.log('Form data to submit:', formData);
+        
+        // Reset form and show success message
+        contactForm.reset();
+        showFormAlert('Your message has been sent successfully!', 'success');
+    });
+}
+
+// Helper function to validate email
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Helper function to show form alerts/feedback
+function showFormAlert(message, type) {
+    // Check if alert already exists and remove it
+    const existingAlert = document.querySelector('.form-alert');
+    if (existingAlert) {
+        existingAlert.remove();
+    }
+    
+    // Create new alert
+    const alertElement = document.createElement('div');
+    alertElement.className = `form-alert ${type}`;
+    alertElement.textContent = message;
+    
+    // Insert alert after form
+    contactForm.insertAdjacentElement('afterend', alertElement);
+    
+    // Auto remove after 3 seconds
+    setTimeout(() => {
+        alertElement.remove();
+    }, 3000);
+}
+
+// Image lazy loading
+document.addEventListener('DOMContentLoaded', () => {
+    const lazyImages = document.querySelectorAll('img');
+    
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const image = entry.target;
+                    image.classList.add('loaded');
+                    imageObserver.unobserve(image);
+                }
+            });
+        });
+        
+        lazyImages.forEach(img => {
+            imageObserver.observe(img);
+        });
+    } else {
+        // Fallback for browsers that don't support IntersectionObserver
+        lazyImages.forEach(img => {
+            img.classList.add('loaded');
+        });
+    }
+});
+
+// Testimonials carousel (if you add testimonials section later)
+/* Uncomment and implement as needed
+function initTestimonialsCarousel() {
+    const testimonialsContainer = document.querySelector('.testimonials-container');
+    const testimonials = document.querySelectorAll('.testimonial');
+    const dots = document.querySelectorAll('.dot');
+    
+    let currentIndex = 0;
+    
+    // Show testimonial by index
+    function showTestimonial(index) {
+        testimonials.forEach((testimonial, i) => {
+            testimonial.style.transform = `translateX(${100 * (i - index)}%)`;
+        });
+        
+        // Update active dot
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
+    }
+    
+    // Initialize
+    showTestimonial(currentIndex);
+    
+    // Set up dot navigation
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            currentIndex = i;
+            showTestimonial(currentIndex);
+        });
+    });
+    
+    // Auto rotate testimonials
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % testimonials.length;
+        showTestimonial(currentIndex);
+    }, 5000);
+}
+*/
+
+// Initialize AOS (Animate on Scroll) if you decide to include it
+/* Uncomment if using AOS library
+document.addEventListener('DOMContentLoaded', () => {
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+    });
+});
+*/
+
+// Add some CSS styles programmatically for the form alert
+(function() {
+    const style = document.createElement('style');
+    style.textContent = `
+        .form-alert {
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        .form-alert.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        .form-alert.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        img {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        img.loaded {
+            opacity: 1;
+        }
+    `;
+    document.head.appendChild(style);
+})();
+
+// Detect when user has scrolled down a bit and add a class to header
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+});
+
+// Add scrolled style to header
+(function() {
+    const style = document.createElement('style');
+    style.textContent = `
+        header.scrolled {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+    `;
+    document.head.appendChild(style);
+})();
